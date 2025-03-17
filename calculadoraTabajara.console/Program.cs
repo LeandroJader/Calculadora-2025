@@ -14,35 +14,20 @@ namespace Calculadora.ConsoleApp
             int ContadorHistorico = 0;
 
 
-
             while (true)
             {
-
-                Console.Clear();
-
-                Console.WriteLine("calculadora tabajara 2025");
-                Console.WriteLine("===========================");
-                Console.WriteLine("digite 1 para somar ");
-                Console.WriteLine("digite 2 para subtrair ");
-                Console.WriteLine("digite 3 para multiplicar ");
-                Console.WriteLine("digite 4 para dividir ");
-                Console.WriteLine("digite 5 tabuada ");
-                Console.WriteLine("digite 6 para ver o historico");
-                Console.WriteLine("digite S para sair ");
-                ; Console.WriteLine("===========================");
-                Console.WriteLine("digite uma opcao");
-
-                string opcao = Console.ReadLine().ToUpper(); // se o usuario digitar s minusculo ele converte para maiusculo. 
-                string soma, subtracao, multiplicacao, divisao;
+               // exibe o menu e retorna opção escolhida
+                  string opcao = exibirMenu();
 
 
+                // avalia se o usuário gostaria de sair do programa
                 if (opcao == "S")
                 {
                     break;
 
                 }
 
-
+                // exibe a tabuada de um numero
                 if (opcao == "5")
                 {
                     Console.Clear();
@@ -66,6 +51,7 @@ namespace Calculadora.ConsoleApp
                     continue;
 
                 }
+                //exibe o historico de operações
                 if (opcao == "6")
                 {
                     Console.WriteLine("=====================");
@@ -179,5 +165,31 @@ namespace Calculadora.ConsoleApp
 
 
         }
+
+        //função /metodo
+
+        static string exibirMenu()
+        {
+
+            // exibe o menu e redireciona para opção selecionada
+            Console.Clear();
+
+            Console.WriteLine("calculadora tabajara 2025");
+            Console.WriteLine("===========================");
+            Console.WriteLine("digite 1 para somar ");
+            Console.WriteLine("digite 2 para subtrair ");
+            Console.WriteLine("digite 3 para multiplicar ");
+            Console.WriteLine("digite 4 para dividir ");
+            Console.WriteLine("digite 5 tabuada ");
+            Console.WriteLine("digite 6 para ver o historico");
+            Console.WriteLine("digite S para sair ");
+            ; Console.WriteLine("===========================");
+            Console.WriteLine("digite uma opcao");
+
+            string opcao = Console.ReadLine().ToUpper();
+            return (opcao);
+
+        }
+
     }
 }
